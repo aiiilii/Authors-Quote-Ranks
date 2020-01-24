@@ -1,0 +1,8 @@
+<button [routerLink]="['/index']">Back</button><br>
+<!-- <p>Author Name: {{ oneAuthor.name }}</p> -->
+
+<div *ngIf="errors.name">{{ errors.errors.name.message }}</div>
+
+Name: <input type="text" name="name" value={{oneAuthor.name}} required minlength="3" [(ngModel)]="oneAuthor.name" #name="ngModel" />
+<button [routerLink]="['/index']">Cancel</button>
+<button (click)="editAuthor(oneAuthor._id)">Save!</button>

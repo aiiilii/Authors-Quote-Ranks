@@ -1,0 +1,24 @@
+<button [routerLink]="['/create']">Add an author!</button>
+<p>All Authors!</p>
+
+<table>
+    <thead>
+        <th>Author</th>
+        <th>Actions</th>
+    </thead>
+    <tr *ngFor="let author of authors">
+        <td>{{ author.name }}</td>
+        <td><button routerLink="/show/{{ author._id }}">Show</button>
+            <button routerLink="/quotes/{{ author._id }}">Show Quotes</button>
+            <button routerLink="/edit/{{ author._id }}">Edit</button>
+            <button (click)="deleteAuthor(author._id)">Delete</button>
+        </td>
+    </tr>
+</table>
+
+
+<!-- <div *ngFor="let author of authors">
+    <p>Author name: {{ author.name }}</p>
+    <button routerLink="/show/{{ author._id }}">Show!</button>
+</div> -->
+<!-- <button [routerLink]="['/quotes', author._id]">View Quotes</button> -->

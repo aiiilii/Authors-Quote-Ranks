@@ -1,0 +1,5 @@
+<button [routerLink]="['/index']">Back</button>
+<p>Author Name: {{ oneAuthor.name }}</p>
+<!-- <p>Created at: {{ oneAuthor.createdAt }}</p>
+<p>Updated at: {{ oneAuthor.updatedAt }}</p> -->
+<button (click)="deleteAuthor(oneAuthor._id)">Delete!</button>

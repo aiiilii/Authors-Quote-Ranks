@@ -1,0 +1,20 @@
+<button [routerLink]="['/home']">Home</button>
+
+<p>Provide a quote by {{ oneAuthor.name }}:</p>
+
+<div *ngIf="errors.name">{{ errors.errors.quotes.errors.content.message }}</div>
+<form #writeForm="ngForm" (submit)="submit()">
+    <input
+        class="form-control"
+        type="text"
+        required
+        minlength="3"
+        [(ngModel)]="content"
+        #name="ngModel"
+        name="content"
+    >
+    <!-- <button [routerLink]="['/quotes', authorid]">Cancel</button> -->
+    <button routerLink="/quotes/{{ oneAuthor._id }}">Cancel</button>
+    <!-- <button [disabled]="writeForm.invalid" (click)="submit()" routerLink="/quotes/{{ oneAuthor._id }}">Submit</button> -->
+    <input type="submit" name="submit" id="submit" value="Submit">
+</form>

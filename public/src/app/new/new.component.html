@@ -1,0 +1,14 @@
+<button [routerLink]="['/index']">Home</button>
+<p>Create a new Author!</p>
+
+<div *ngIf="errors.name">{{ errors.errors.name.message }}</div>
+
+Name: <input type="text" name="name" required minlength="3" [(ngModel)]="newAuthor.name" #name="ngModel" />
+<button (click)="createAuthor()">Add!</button>
+
+<!-- <form (submit)="createAuthor()">
+    Name: <input type="text" name="name" required minlength="3" [(ngModel)]="newAuthor.name" #name="ngModel" />
+    <input type="submit" name="submit" id="submit" value="Add!" />
+</form> -->
+<!-- <div *ngIf="!name.valid">* Name needs to be at least 3 characters</div> -->
+<p *ngIf="addedAuthor">{{addedAuthor.name}} was added to the database!</p>
